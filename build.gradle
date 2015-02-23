@@ -1,0 +1,45 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "com.moowork.gradle:gradle-node-plugin:0.7"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: "com.moowork.node"
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+
+    test {
+        java {
+            srcDir 'test'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'lib/prod', include: ['*.jar'])
+    testCompile fileTree(dir: 'lib/test', include: ['*.jar'])
+}
+
+mainClassName = 'Launcher'
+
+run {
+    if (!project.hasProperty('port')) ext.port = 8080
+    args port
+}
+
+task stage(dependsOn: ['clean', 'installApp'])
+
+task ci(dependsOn: ['clean', 'test', 'npm_install', 'npm_test'])
