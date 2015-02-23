@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/yosethegame/java-sunhttpserver-example.svg)](https://travis-ci.org/yosethegame/java-sunhttpserver-example)
 
+I pass the two first challenges :)
+
 ## Get ready
 
 [fork](https://help.github.com/articles/fork-a-repo) me and [clone](https://help.github.com/articles/fork-a-repo#step-2-clone-your-fork) your repository locally.
