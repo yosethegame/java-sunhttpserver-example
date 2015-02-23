@@ -12,7 +12,7 @@ check your install: in the directory of the repo, run
 gradle clean ci
 ```
 
-Build should be successful and the tests should pass
+Build should be successful and the tests should pass (14 java, 1 javascript)
 
 ## See it working
 
